@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuwbc7ykhu062"]
+
+[ext_resource type="Script" path="res://Enemies/Raptor/script/raptor.gd" id="1_rtl85"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_024u2"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c5bgy"]
+material = SubResource("StandardMaterial3D_024u2")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7quna"]
+
+[node name="Raptor" type="CharacterBody3D"]
+script = ExtResource("1_rtl85")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_c5bgy")
+
+[node name="Collision_ground" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7quna")
