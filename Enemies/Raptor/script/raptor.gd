@@ -38,4 +38,5 @@ func _physics_process(delta):
 func hit():
 	is_dead = true
 	get_node("AnimatedSprite3D").visible = false
+	get_node("Collision_ground").disabled = true
 	get_node("MeshInstance3D").visible = true
