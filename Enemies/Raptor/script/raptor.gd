@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var player: Node3D
+@onready var anim = $AnimatedSprite3D
 
 const MAX_SPEED = 6.0
 const ACCELERATION = 0.5
@@ -14,6 +15,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta 
 	if position.distance_to(player.position) < 15.0:
+		#line play anim run
+		anim.play("Run")
 		if global_position.z < player.global_position.z:
 			look_at(position + Vector3.MODEL_FRONT)
 			velocity.z = max(velocity.z - ACCELERATION, -MAX_SPEED)
@@ -23,5 +26,7 @@ func _physics_process(delta):
 		print(velocity.z)
 	else:
 		velocity.z = lerp(velocity.z, 0.0, FRICTION)
+		#line return anim iddle
+		anim.play("Iddle")
 
 	move_and_slide()
