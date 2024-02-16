@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://22de61damy5f"]
+
+[ext_resource type="PackedScene" uid="uid://v1nd0j2mlnbp" path="res://Character/Character.tscn" id="1_msxvk"]
+[ext_resource type="PackedScene" uid="uid://dadylraf8dauw" path="res://Grounds/Default.tscn" id="2_3heow"]
+[ext_resource type="Script" path="res://Scenes/RaphTestLevels/script/Camera3D.gd" id="3_uk5jr"]
+[ext_resource type="PackedScene" uid="uid://cuwbc7ykhu062" path="res://Enemies/Raptor/raptor.tscn" id="4_0hmim"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fpm4c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e31bn"]
+size = Vector3(1, 1, 0.01)
+
+[node name="Level" type="Node3D"]
+
+[node name="Character" parent="." instance=ExtResource("1_msxvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21161, 0.570428)
+
+[node name="grounds" type="Node3D" parent="."]
+
+[node name="block" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, 0, 1, 0, -10, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="block2" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, 2.58819, 0.965926, 1.13133e-08, -9.65926, 0.258819, -4.2222e-08, 0, -1.28192, 9.70259)
+
+[node name="block3" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, -2.38419e-07, 1, -8.88178e-16, -10, 0, -4.37114e-08, 0, -2.28192, 17.7026)
+
+[node name="block4" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, -2.58819, 0.965926, -1.13133e-08, -9.65926, -0.258819, -4.2222e-08, 0, -1, 25)
+
+[node name="block5" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, -5, 0.866025, -2.18557e-08, -8.66025, -0.5, -3.78552e-08, 0, 2, 32)
+
+[node name="block6" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-4.37114e-07, 0, 1, -10, -4.37114e-08, -4.37114e-08, 4.37114e-07, -1, 1.91069e-15, 0, 4.50373, -4.59772)
+
+[node name="block7" parent="grounds" instance=ExtResource("2_3heow")]
+transform = Transform3D(-1.46349e-06, -2.9281e-09, 1, -5.72205e-06, 1, 2.92809e-09, -30, -2.08616e-07, -4.8783e-08, 0, 4.40356, 51.1123)
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, 6, 1, 0)
+script = ExtResource("3_uk5jr")
+target = NodePath("../Character")
+
+[node name="mouse_position" type="StaticBody3D" parent="Camera3D"]
+transform = Transform3D(28.1626, 0, -10.3378, 0, 30, 0, 10.3378, 0, 28.1626, -8.42534, 0, -7.33527)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/mouse_position"]
+transform = Transform3D(1, 0, 2.32831e-10, 0, 1, 0, -2.32831e-10, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_fpm4c")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/mouse_position"]
+transform = Transform3D(1, 0, 2.32831e-10, 0, 1, 0, -2.32831e-10, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_e31bn")
+
+[node name="Raptor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_0hmim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+player = NodePath("../Character")
