@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://bepr3jvj0bm0d"]
+
+[ext_resource type="PackedScene" uid="uid://dfbtl7ac3ixqd" path="res://Character/Meshes/B0bi_Head.glb" id="1_b5s6h"]
+[ext_resource type="Texture2D" uid="uid://deumsttms6a32" path="res://Character/Textures/SK_B0by_GRID_BaseColor.png" id="2_3qavf"]
+[ext_resource type="Texture2D" uid="uid://bp7y7hvuh4hh5" path="res://Character/Textures/SK_B0by_GRID_Emissive.png" id="3_xaiip"]
+[ext_resource type="Texture2D" uid="uid://d0umccxn3sy26" path="res://Character/Textures/SK_B0by_GRID_Metalness.png" id="4_yvln8"]
+[ext_resource type="Texture2D" uid="uid://4sd2e307bjfj" path="res://Character/Textures/SK_B0by_GRID_Roughness.png" id="5_m6s38"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk0r1"]
+albedo_texture = ExtResource("2_3qavf")
+metallic = 1.0
+metallic_texture = ExtResource("4_yvln8")
+roughness_texture = ExtResource("5_m6s38")
+emission_enabled = true
+emission_texture = ExtResource("3_xaiip")
+
+[node name="B0bi_Head" instance=ExtResource("1_b5s6h")]
+
+[node name="SK_B0byHead" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nk0r1")
