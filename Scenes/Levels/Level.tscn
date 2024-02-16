@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://v1nd0j2mlnbp" path="res://Character/Character.tscn" id="1_3xeri"]
 [ext_resource type="PackedScene" uid="uid://dadylraf8dauw" path="res://Grounds/Default.tscn" id="2_bv15j"]
-[ext_resource type="Script" path="res://Scenes/Levels/script/Camera3D.gd" id="2_lxtjl"]
 [ext_resource type="PackedScene" uid="uid://cuwbc7ykhu062" path="res://Enemies/Raptor/raptor.tscn" id="4_3rr5x"]
+[ext_resource type="PackedScene" uid="uid://b4ov2mepykkvh" path="res://Camera/camera_3d.tscn" id="4_sfc8j"]
 
 [node name="Level" type="Node3D"]
 
@@ -27,14 +27,18 @@ transform = Transform3D(-4.37114e-07, 0, 1, -2.58819, 0.965926, -1.13133e-08, -9
 [node name="block5" parent="grounds" instance=ExtResource("2_bv15j")]
 transform = Transform3D(-4.37114e-07, 0, 1, -5, 0.866025, -2.18557e-08, -8.66025, -0.5, -3.78552e-08, 0, 2, 32)
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(-0.404631, 0, 0.91448, 0, 1, 0, -0.91448, 0, -0.404631, 6, 1, 0)
-script = ExtResource("2_lxtjl")
-target = NodePath("../Character")
+[node name="block6" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-8.74228e-07, -1.77636e-15, 1, 0, 1, 1.77636e-15, -20, 7.76472e-23, -4.37114e-08, 0, 4.40913, 46.0018)
 
-[node name="block5" parent="." instance=ExtResource("2_bv15j")]
-transform = Transform3D(-4.37114e-07, -1.77636e-15, 1, 0, 1, 5.32907e-15, -10, 0, -4.37114e-08, 0, 4.40913, 41.0018)
+[node name="block7" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -10, -4.37114e-08, -4.37114e-08, 4.37114e-07, -1, 1.91069e-15, 0, 5, -5)
+
+[node name="block8" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -10, -2.98023e-07, -4.37114e-08, 2.86102e-06, -1, -7.10543e-15, 0, 9, 56)
 
 [node name="Raptor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_3rr5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 19)
 player = NodePath("../Character")
+
+[node name="Camera3D2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_sfc8j")]
+target = NodePath("../Character")

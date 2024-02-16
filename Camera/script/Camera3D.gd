@@ -24,7 +24,6 @@ func shoot_ray():
 	ray_query.to = to
 	var raycast_result = space.intersect_ray(ray_query)
 	if !raycast_result.is_empty():
-		print(raycast_result["position"])
 		var look_direction = Vector3(raycast_result["position"])
 		look_direction.x = 0
 		target.get_node("SpotLight3D").look_at(look_direction)

@@ -1,22 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuwbc7ykhu062"]
+[gd_scene load_steps=6 format=3 uid="uid://cuwbc7ykhu062"]
 
 [ext_resource type="Script" path="res://Enemies/Raptor/script/raptor.gd" id="1_rtl85"]
 [ext_resource type="SpriteFrames" uid="uid://boicabvtw6y6f" path="res://Asset/Ennemies/IddleEnnemy.tres" id="2_5u11q"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7quna"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ipx6h"]
+height = 1.54341
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjje5"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tqfy1"]
+material = SubResource("StandardMaterial3D_tjje5")
 
 [node name="Raptor" type="CharacterBody3D"]
+collision_layer = 3
 script = ExtResource("1_rtl85")
 
 [node name="Collision_ground" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.998939, 0)
-shape = SubResource("CapsuleShape3D_7quna")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0679932, 0.768959, 0.055481)
+shape = SubResource("CapsuleShape3D_ipx6h")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(3.32768, 0, 0, 0, 2.95983, 0, 0, 0, 1, -0.00724077, 1.2008, -0.0143865)
 flip_h = true
-billboard = 1
+billboard = 2
+shaded = true
 texture_filter = 0
 sprite_frames = ExtResource("2_5u11q")
 animation = &"Iddle"
 autoplay = "Iddle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_tqfy1")

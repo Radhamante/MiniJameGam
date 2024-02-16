@@ -30,5 +30,5 @@ func _physics_process(delta):
 		velocity.z = min(velocity.z + ACCELERATION, MAX_SPEED)
 	else:
 		velocity.z = lerp(velocity.z, 0.0, FRICTION)
-
+	position.x = 0
 	move_and_slide()
