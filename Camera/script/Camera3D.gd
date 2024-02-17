@@ -15,7 +15,7 @@ func _process(delta):
 	
 func shoot_ray():
 	var mouse_position = get_viewport().get_mouse_position()
-	var ray_length = 1000
+	var ray_length = 100
 	var from = project_ray_origin(mouse_position)
 	var to = from + project_ray_normal(mouse_position) * ray_length
 	var space = get_world_3d().direct_space_state
@@ -26,6 +26,9 @@ func shoot_ray():
 	if !raycast_result.is_empty():
 		var look_direction = Vector3(raycast_result["position"])
 		look_direction.x = 0
-		target.get_node("Armature/Skeleton3D/BoneAttachment3D2/Node3D/head_rotation_axis").look_at(look_direction)
+		var head_rotate = target.get_node("Armature/Skeleton3D/BoneAttachment3D2/Node3D/head_rotation_axis")
+		head_rotate.look_at(look_direction)
+		head_rotate.rotation_degrees.x = clamp(head_rotate.rotation_degrees.x, -29, 50)
+
 	
 	#target.get_node("SpotLight3D").
