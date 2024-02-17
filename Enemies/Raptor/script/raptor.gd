@@ -36,6 +36,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func hit():
+	Global.score += 1
 	is_dead = true
 	get_node("AnimatedSprite3D").visible = false
 	get_node("Collision_ground").disabled = true

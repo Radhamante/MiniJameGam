@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcm8jbfpvene1"]
+
+[ext_resource type="PackedScene" uid="uid://djp1ctqa6fvkj" path="res://Environment/Grounds/Ground_AA/Ground_AA.tscn" id="1_d1ecr"]
+[ext_resource type="PackedScene" uid="uid://cmb343r24u2j2" path="res://Environment/Grounds/Ground_AD/Ground_AD.tscn" id="2_kl2jm"]
+[ext_resource type="PackedScene" uid="uid://c7rimhyxbbqpu" path="res://Environment/Grounds/Ground_AE/Ground_AE.tscn" id="3_klo0i"]
+[ext_resource type="PackedScene" uid="uid://ye4mx40nygkt" path="res://Environment/Grounds/Ground_AC/Ground_AC.tscn" id="4_pgn2l"]
+[ext_resource type="PackedScene" uid="uid://d2xx38q1vcble" path="res://Environment/Grounds/Ground_AB/Ground_AB.tscn" id="5_cje48"]
+[ext_resource type="PackedScene" uid="uid://cuwbc7ykhu062" path="res://Enemies/Raptor/raptor.tscn" id="6_tjwlt"]
+
+[node name="Pattern3" type="Node3D"]
+
+[node name="GroundAa" parent="." instance=ExtResource("1_d1ecr")]
+
+[node name="GroundAd" parent="." instance=ExtResource("2_kl2jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="GroundAe" parent="." instance=ExtResource("3_klo0i")]
+transform = Transform3D(4.10652, 1.46272, -6.15212, -0.812071, 7.39676, 1.21659, 6.27126, 1.0855e-07, 4.18604, -12.7496, 0.46737, 36.5809)
+
+[node name="GroundAc" parent="." instance=ExtResource("4_pgn2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.612116, 3, 17)
+
+[node name="GroundAb" parent="." instance=ExtResource("5_cje48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.29538, 25)
+
+[node name="GroundAa2" parent="." instance=ExtResource("1_d1ecr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.36054, 34)
+
+[node name="GroundAc2" parent="." instance=ExtResource("4_pgn2l")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 2, 44)
+
+[node name="GroundAe2" parent="." instance=ExtResource("3_klo0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 52.9011)
+
+[node name="GroundAc3" parent="." instance=ExtResource("4_pgn2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295432, 2.17813, 61)
+
+[node name="Raptor" parent="." instance=ExtResource("6_tjwlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 24)
