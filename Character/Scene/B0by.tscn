@@ -2504,7 +2504,7 @@ skin = SubResource("Skin_vep3q")
 surface_material_override/0 = SubResource("StandardMaterial3D_27dkw")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.827538, 0.185218, -0.529977, -0.465006, 0.755076, -0.4622, 0.314565, 0.62893, 0.710982, 20.6538, 18.5126, -91.1123)
+transform = Transform3D(0.827539, 0.185217, -0.529976, -0.465004, 0.755075, -0.462202, 0.314565, 0.628931, 0.710981, 20.6538, 18.5126, -91.1124)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 10
 
@@ -2515,7 +2515,7 @@ skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ks8un")
 
 [node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.996321, -0.085693, -0.00142738, 0.0254843, 0.280314, 0.95957, -0.0818283, -0.956076, 0.281466, -2.44943, 7.79337, -136.112)
+transform = Transform3D(0.996321, -0.0856936, -0.00142854, 0.0254858, 0.280314, 0.95957, -0.0818286, -0.956075, 0.281467, -2.44947, 7.7934, -136.112)
 bone_name = "mixamorig_Head"
 bone_idx = 5
 
