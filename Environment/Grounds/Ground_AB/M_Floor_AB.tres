@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6og6k06id8x0"]
+
+[ext_resource type="Texture2D" uid="uid://cihqe76toglgs" path="res://Environment/Grounds/Ground_AB/Floor_AB_Grid_BaseColor.png" id="1_lyxt5"]
+
+[resource]
+albedo_texture = ExtResource("1_lyxt5")
