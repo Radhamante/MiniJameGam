@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://besyet8ela4l6"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Script/PatternSpawner.gd" id="1_02unl"]
+[ext_resource type="PackedScene" uid="uid://c6y284gpewsxx" path="res://Patterns/Pattern1.tscn" id="2_ud2pe"]
+[ext_resource type="PackedScene" uid="uid://cm0vcew7abjil" path="res://Patterns/Pattern2.tscn" id="3_nsdth"]
+
+[node name="PatternSpawner" type="Node3D"]
+script = ExtResource("1_02unl")
+patterns = [ExtResource("2_ud2pe"), ExtResource("3_nsdth")]
+
+[node name="Area3D" type="Area3D" parent="."]
