@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6y284gpewsxx"]
 
-[ext_resource type="PackedScene" uid="uid://dadylraf8dauw" path="res://Grounds/Default.tscn" id="1_s61kb"]
+[ext_resource type="PackedScene" uid="uid://dadylraf8dauw" path="res://Environment/Grounds/Default.tscn" id="1_s61kb"]
 [ext_resource type="PackedScene" uid="uid://cuwbc7ykhu062" path="res://Enemies/Raptor/raptor.tscn" id="2_75pv1"]
 
 [node name="Pattern1" type="Node3D"]

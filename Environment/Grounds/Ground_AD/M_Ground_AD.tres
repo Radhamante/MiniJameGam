@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ryxtykk03o6l"]
+
+[ext_resource type="Texture2D" uid="uid://y88pkcnv8kqy" path="res://Environment/Grounds/Ground_AD/Floor_AD_Grid_BaseColor.png" id="1_l85vp"]
+
+[resource]
+albedo_texture = ExtResource("1_l85vp")
