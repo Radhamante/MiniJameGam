@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfbtl7ac3ixqd"
-path="res://.godot/imported/B0bi_Head.glb-b05ecef3aa258ffdc26cb30c58713252.scn"
+uid="uid://bcy3q1nce02qr"
+path="res://.godot/imported/B0by.glb-ed9e4bc2a66dd394f7bad96b3ff2666e.scn"
 
 [deps]
 
-source_file="res://Character/Meshes/B0bi_Head.glb"
-dest_files=["res://.godot/imported/B0bi_Head.glb-b05ecef3aa258ffdc26cb30c58713252.scn"]
+source_file="res://Character/B0by.glb"
+dest_files=["res://.godot/imported/B0by.glb-ed9e4bc2a66dd394f7bad96b3ff2666e.scn"]
 
 [params]
 

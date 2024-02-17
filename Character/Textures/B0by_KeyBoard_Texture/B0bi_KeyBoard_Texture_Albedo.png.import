@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0umccxn3sy26"
-path.s3tc="res://.godot/imported/SK_B0by_GRID_Metalness.png-8fd035359867c514db45183da6e8f33c.s3tc.ctex"
+uid="uid://dqkuciq7lp53v"
+path.s3tc="res://.godot/imported/B0bi_KeyBoard_Texture_Albedo.png-037d54a4ef64f0e459453c06953670f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Character/Textures/SK_B0by_GRID_Metalness.png"
-dest_files=["res://.godot/imported/SK_B0by_GRID_Metalness.png-8fd035359867c514db45183da6e8f33c.s3tc.ctex"]
+source_file="res://Character/Textures/B0by_KeyBoard_Texture/B0bi_KeyBoard_Texture_Albedo.png"
+dest_files=["res://.godot/imported/B0bi_KeyBoard_Texture_Albedo.png-037d54a4ef64f0e459453c06953670f4.s3tc.ctex"]
 
 [params]
 

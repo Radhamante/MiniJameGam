@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1uh4vnk3qrt"
-path.s3tc="res://.godot/imported/SK_B0by_GRID_Normal.png-d396d7b547e6f40f735e366d5d5cbb81.s3tc.ctex"
+uid="uid://deumsttms6a32"
+path.s3tc="res://.godot/imported/SK_B0by_GRID_BaseColor.png-60ed546fb4263b91db4c2b71b6233313.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Character/Textures/SK_B0by_GRID_Normal.png"
-dest_files=["res://.godot/imported/SK_B0by_GRID_Normal.png-d396d7b547e6f40f735e366d5d5cbb81.s3tc.ctex"]
+source_file="res://Character/Textures/B0by_Texture/SK_B0by_GRID_BaseColor.png"
+dest_files=["res://.godot/imported/SK_B0by_GRID_BaseColor.png-60ed546fb4263b91db4c2b71b6233313.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Character/Textures/SK_B0by_GRID_Normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
