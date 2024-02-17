@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccmtmquccghuv"]
+
+[ext_resource type="PackedScene" uid="uid://cyb2nohvo1o5v" path="res://Character/Scene/B0by.tscn" id="1_226jx"]
+[ext_resource type="PackedScene" uid="uid://dadylraf8dauw" path="res://Grounds/Default.tscn" id="2_bv15j"]
+[ext_resource type="Script" path="res://Character/script/Character.gd" id="2_cbh1u"]
+[ext_resource type="PackedScene" uid="uid://b4ov2mepykkvh" path="res://Camera/camera_3d.tscn" id="4_sfc8j"]
+[ext_resource type="PackedScene" uid="uid://besyet8ela4l6" path="res://Scenes/Levels/PatternSpawner.tscn" id="6_natas"]
+
+[node name="Level" type="Node3D"]
+
+[node name="B0by" parent="." instance=ExtResource("1_226jx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+script = ExtResource("2_cbh1u")
+
+[node name="grounds" type="Node3D" parent="."]
+
+[node name="block" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, 0, 1, 0, -10, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="block2" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, 2.58819, 0.965926, 1.13133e-08, -9.65926, 0.258819, -4.2222e-08, 0, -1.28192, 9.70259)
+
+[node name="block3" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -2.38419e-07, 1, -8.88178e-16, -10, 0, -4.37114e-08, 0, -2.28192, 17.7026)
+
+[node name="block4" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -2.58819, 0.965926, -1.13133e-08, -9.65926, -0.258819, -4.2222e-08, 0, -1, 25)
+
+[node name="block5" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -5, 0.866025, -2.18557e-08, -8.66025, -0.5, -3.78552e-08, 0, 2, 32)
+
+[node name="block6" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-8.74228e-07, -1.77636e-15, 1, 0, 1, 1.77636e-15, -20, 7.76472e-23, -4.37114e-08, 0, 4.40913, 46.0018)
+
+[node name="block7" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -10, -4.37114e-08, -4.37114e-08, 4.37114e-07, -1, 1.91069e-15, 0, 5, -5)
+
+[node name="block8" parent="grounds" instance=ExtResource("2_bv15j")]
+transform = Transform3D(-4.37114e-07, 0, 1, -10, -2.98023e-07, -4.37114e-08, 2.86102e-06, -1, -7.10543e-15, 0, 9, 56)
+
+[node name="Camera3D2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_sfc8j")]
+target = NodePath("../B0by")
+
+[node name="PatternSpawner" parent="." instance=ExtResource("6_natas")]

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var player: Node3D
+@onready var player: Node3D = get_node("/root/Level/B0by")
 @onready var anim = $AnimatedSprite3D
 
 const MAX_SPEED = 6.0
@@ -11,6 +11,10 @@ var is_dead = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	print("dino generated")
+	print(player)
+
 func _physics_process(delta):
 	# Add the gravity.
 	position.x = 0
@@ -18,7 +22,7 @@ func _physics_process(delta):
 		return
 	if not is_on_floor():
 		velocity.y -= gravity * delta 
-	if position.distance_to(player.position) < 15.0:
+	if global_position.distance_to(player.global_position) < 15.0:
 		#line play anim run
 		anim.play("Run")
 		if global_position.z < player.global_position.z:
