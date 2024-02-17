@@ -7,8 +7,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	get_node("Head").position = get_node("Armature/Skeleton3D/BobyHead_Locator").position
-	move_and_slide()
-	
-	
+func _process(delta):
+	pass
