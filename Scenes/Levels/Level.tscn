@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccmtmquccghuv"]
+[gd_scene load_steps=17 format=3 uid="uid://ccmtmquccghuv"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_2pojc"]
 [ext_resource type="PackedScene" uid="uid://cyb2nohvo1o5v" path="res://Character/Scene/B0by.tscn" id="1_226jx"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bcm8jbfpvene1" path="res://Patterns/Pattern3.tscn" id="7_1m6kb"]
 [ext_resource type="PackedScene" uid="uid://djp1ctqa6fvkj" path="res://Environment/Grounds/Ground_AA/Ground_AA.tscn" id="8_5e3me"]
 [ext_resource type="Texture2D" uid="uid://bt611jevkiik3" path="res://Scenes/Levels/background/background.jpg" id="8_81b7e"]
+[ext_resource type="PackedScene" uid="uid://c6y284gpewsxx" path="res://Patterns/Pattern1.tscn" id="9_c8cor"]
+[ext_resource type="PackedScene" uid="uid://cm0vcew7abjil" path="res://Patterns/Pattern2.tscn" id="10_o2rif"]
 
 [sub_resource type="Shader" id="Shader_ellpk"]
 code = "shader_type sky;
@@ -309,7 +311,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19415, 1.43899)
 script = ExtResource("2_cbh1u")
 
 [node name="PatternSpawner" parent="." instance=ExtResource("6_natas")]
-patterns = [ExtResource("7_1m6kb")]
+patterns = [ExtResource("7_1m6kb"), ExtResource("9_c8cor"), ExtResource("10_o2rif")]
 
 [node name="Back_wall" type="Node3D" parent="."]
 
