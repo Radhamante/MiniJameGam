@@ -6,9 +6,6 @@ extends Node3D
 const PATTERN_SIZE = 64
 var current_pose = 0
 
-func test(a):
-	add_pattern()
-
 func generate_limits(pattern):
 	#SHAPE
 	var shape = BoxShape3D.new()
@@ -21,7 +18,13 @@ func generate_limits(pattern):
 	limit.collision_mask = 4
 	limit.position = Vector3(0,5,1)
 	
-	limit.body_entered.connect(test)
+	#CALLBACK
+	var on_body_enter = func(a):
+		limit.queue_free()
+		print(a)
+		add_pattern()
+	
+	limit.body_entered.connect(on_body_enter)
 	
 	limit.add_child(collision)
 	pattern.add_child(limit)

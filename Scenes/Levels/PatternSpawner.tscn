@@ -7,5 +7,3 @@
 [node name="PatternSpawner" type="Node3D"]
 script = ExtResource("1_02unl")
 patterns = [ExtResource("2_ud2pe"), ExtResource("3_nsdth")]
-
-[node name="Area3D" type="Area3D" parent="."]

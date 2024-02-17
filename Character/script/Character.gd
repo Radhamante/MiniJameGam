@@ -27,7 +27,6 @@ func _ready():
 
 func dance():
 	animation_tree.set("parameters/conditions/dancing", true)
-	print("DANCE")
 
 func _input(event):
 	animation_tree.set("parameters/conditions/dancing", false)
