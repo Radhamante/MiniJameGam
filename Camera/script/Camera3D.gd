@@ -26,6 +26,6 @@ func shoot_ray():
 	if !raycast_result.is_empty():
 		var look_direction = Vector3(raycast_result["position"])
 		look_direction.x = 0
-		#target.get_node("Head").look_at(look_direction)
+		target.get_node("Armature/Skeleton3D/BoneAttachment3D2/Node3D/head_rotation_axis").look_at(look_direction)
 	
 	#target.get_node("SpotLight3D").

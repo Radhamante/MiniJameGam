@@ -21,7 +21,6 @@ func generate_limits(pattern):
 	#CALLBACK
 	var on_body_enter = func(a):
 		limit.queue_free()
-		print(a)
 		add_pattern()
 	
 	limit.body_entered.connect(on_body_enter)
@@ -40,7 +39,6 @@ func add_pattern():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var dir = DirAccess.open("res://Patterns/")
-	print(dir)
 	add_pattern()
 	pass # Replace with function body.
 
