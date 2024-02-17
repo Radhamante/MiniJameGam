@@ -51,15 +51,19 @@ visible = false
 
 [node name="fear_1" type="AudioStreamPlayer3D" parent="Sounds/Fear"]
 stream = ExtResource("4_bpjit")
+volume_db = 10.0
 
 [node name="fear_2" type="AudioStreamPlayer3D" parent="Sounds/Fear"]
 stream = ExtResource("5_lbwls")
+volume_db = 10.0
 
 [node name="fear_3" type="AudioStreamPlayer3D" parent="Sounds/Fear"]
 stream = ExtResource("6_8m4ay")
+volume_db = 10.0
 
 [node name="fear_4" type="AudioStreamPlayer3D" parent="Sounds/Fear"]
 stream = ExtResource("7_v6eob")
+volume_db = 10.0
 
 [node name="Dead" type="Node3D" parent="Sounds"]
 
