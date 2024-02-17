@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuwbc7ykhu062"]
+[gd_scene load_steps=7 format=3 uid="uid://cuwbc7ykhu062"]
 
 [ext_resource type="Script" path="res://Enemies/Raptor/script/raptor.gd" id="1_rtl85"]
 [ext_resource type="SpriteFrames" uid="uid://boicabvtw6y6f" path="res://Asset/Ennemies/IddleEnnemy.tres" id="2_5u11q"]
+[ext_resource type="PackedScene" uid="uid://bgyuo38tlahvs" path="res://Enemies/Raptor/raptorDancing.tscn" id="3_mqv28"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ipx6h"]
 height = 1.54341
@@ -33,3 +34,7 @@ autoplay = "Iddle"
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CapsuleMesh_tqfy1")
+
+[node name="dino" parent="." instance=ExtResource("3_mqv28")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+visible = false
