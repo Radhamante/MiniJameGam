@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://fxx457rckunj"]
+
+[ext_resource type="Script" path="res://Cinematic/Script/Cinematic_Introduction.gd" id="1_3i36j"]
+[ext_resource type="VideoStream" path="res://Cinematic/Medias/Cinematique_intro.ogv" id="1_hsmef"]
+[ext_resource type="AudioStream" uid="uid://fau0r8xw8di3" path="res://Cinematic/Medias/intro_sound.wav" id="2_yftvp"]
+
+[node name="CinematicIntroduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3i36j")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 770.0
+offset_bottom = 437.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+audio_track = 1
+stream = ExtResource("1_hsmef")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yftvp")
+autoplay = true
+
+[node name="Skip_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 575.0
+offset_right = 1150.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "SKIP"
+flat = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Skip_Button" to="." method="_on_skip_button_pressed"]
