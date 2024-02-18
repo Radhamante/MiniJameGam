@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://5ottu7xftfdp"]
+[gd_scene load_steps=10 format=3 uid="uid://5ottu7xftfdp"]
 
 [ext_resource type="Texture2D" uid="uid://hng1713dir1k" path="res://UI/InGameUI/BackUIProgressBar.png" id="1_382wq"]
+[ext_resource type="Script" path="res://UI/InGameUI/HUD.gd" id="1_vsswk"]
 [ext_resource type="Texture2D" uid="uid://5d8vigie3mf0" path="res://UI/InGameUI/Portal stability.png" id="2_ivybu"]
 [ext_resource type="Texture2D" uid="uid://cjhajuvxgi5da" path="res://UI/InGameUI/BackUIScore.png" id="3_vpunp"]
 [ext_resource type="FontFile" uid="uid://dxexw55tub0df" path="res://UI/InGameUI/RETROTECH.ttf" id="4_anwtm"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vsswk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
