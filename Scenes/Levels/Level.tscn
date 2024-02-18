@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djp1ctqa6fvkj" path="res://Environment/Grounds/Ground_AA/Ground_AA.tscn" id="8_5e3me"]
 [ext_resource type="PackedScene" uid="uid://c6y284gpewsxx" path="res://Patterns/Pattern1.tscn" id="9_c8cor"]
 [ext_resource type="PackedScene" uid="uid://cm0vcew7abjil" path="res://Patterns/Pattern2.tscn" id="10_o2rif"]
-[ext_resource type="AudioStream" uid="uid://fxo8oyafp4e8" path="res://Scenes/Levels/Sounds/music.wav" id="13_jhqq7"]
+[ext_resource type="AudioStream" uid="uid://bj61mtr4ey1t2" path="res://Scenes/Levels/Sounds/Game_Music.tres" id="13_2uwdl"]
 
 [sub_resource type="Shader" id="Shader_ellpk"]
 code = "shader_type sky;
@@ -334,7 +334,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_jhqq7")
+stream = ExtResource("13_2uwdl")
 volume_db = -3.0
 autoplay = true
 
