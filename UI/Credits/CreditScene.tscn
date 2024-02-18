@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba3nhqwww4ecf"]
+[gd_scene load_steps=5 format=3 uid="uid://ba3nhqwww4ecf"]
 
 [ext_resource type="FontFile" uid="uid://dxexw55tub0df" path="res://UI/InGameUI/RETROTECH.ttf" id="1_ayut8"]
 [ext_resource type="Script" path="res://UI/Credits/CreditScene.gd" id="1_oamv6"]
 [ext_resource type="Texture2D" uid="uid://bxer7i2cbmns5" path="res://UI/Credits/Capture d'écran 2024-02-18 122312.png" id="1_rj5k0"]
+[ext_resource type="Texture2D" uid="uid://b52xc30q55xcl" path="res://UI/Credits/Crédit.png" id="3_lbnim"]
 
 [node name="CreditScene" type="Control"]
 layout_mode = 3
@@ -17,13 +18,18 @@ script = ExtResource("1_oamv6")
 position = Vector2(575, 325)
 texture = ExtResource("1_rj5k0")
 
+[node name="Crédit" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_lbnim")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 2.0
 offset_right = 1150.0
 offset_bottom = 651.0
-color = Color(0, 0, 0, 0.278431)
+color = Color(0, 0, 0, 0.439216)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -33,17 +39,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -46.0
-offset_top = 204.0
+offset_top = 276.0
 offset_right = 78.0
-offset_bottom = 248.0
+offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.509804, 0, 0, 1)
+theme_override_colors/font_color = Color(0.631373, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.458824, 0.458824, 0.458824, 1)
 theme_override_colors/icon_pressed_color = Color(0.32549, 0.32549, 0.32549, 1)
 theme_override_colors/icon_hover_color = Color(0.384314, 0.384314, 0.384314, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.32549, 0.32549, 0.32549, 1)
 theme_override_fonts/font = ExtResource("1_ayut8")
+theme_override_font_sizes/font_size = 30
 text = "Return"
 flat = true
 
