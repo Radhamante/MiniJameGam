@@ -1,10 +1,10 @@
 extends Node3D
 
-@onready var SpritePlante = $Node3D
 @onready var plantanim = $AnimationPlayer
-@export var sprite : Sprite3D
 @onready var sprite_3d = $Node3D/Sprite3D
-var dir = DirAccess.open("res://Asset/Props2D/Plants/PlantsSprite/")
+
+@export var sprite : Sprite3D
+@export var textures:Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,12 +13,7 @@ func _ready():
 	var new_scale = 1 - ((randf() / 2) - 0.25)
 	sprite_3d.scale = Vector3(new_scale,new_scale,new_scale)
 	
-	if dir:
-		var file_name = dir.get_files()[(randi() % (dir.get_files().size() / 2) * 2)]
-		sprite_3d.set_texture(load("res://Asset/Props2D/Plants/PlantsSprite/" + file_name))
-		
-	else:
-		print("An error occurred when trying to access the path.")
+	sprite_3d.set_texture(textures[randi() % textures.size()])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

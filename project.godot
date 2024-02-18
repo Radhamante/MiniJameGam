@@ -13,12 +13,15 @@ config_version=5
 config/name="Mini Jame Gam"
 run/main_scene="res://Scenes/Levels/Level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/image="res://Scenes/Levels/background/background.jpg"
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scenes/Levels/Script/Global.gd"
+
+[display]
+
+window/size/resizable=false
 
 [filesystem]
 

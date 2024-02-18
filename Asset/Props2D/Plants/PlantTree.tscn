@@ -1,7 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dokb4ke8lmlrw"]
+[gd_scene load_steps=17 format=3 uid="uid://dokb4ke8lmlrw"]
 
 [ext_resource type="Script" path="res://Asset/Props2D/Plants/CollidingPlant.gd" id="1_xutyr"]
+[ext_resource type="Texture2D" uid="uid://b18ff1nchl2dk" path="res://Asset/Props2D/Plants/PlantsSprite/Bush.Medium.png" id="2_6j7y6"]
 [ext_resource type="Texture2D" uid="uid://brwmybetx56uj" path="res://Asset/Props2D/Plants/PlantsSprite/Bush.Small.png" id="2_ikwig"]
+[ext_resource type="Texture2D" uid="uid://ciupw4jnhk3ga" path="res://Asset/Props2D/Plants/PlantsSprite/Grass.Medium.png" id="4_nb4tq"]
+[ext_resource type="Texture2D" uid="uid://da6cjy3s0g503" path="res://Asset/Props2D/Plants/PlantsSprite/Grass.Small.png" id="5_ifhfi"]
+[ext_resource type="Texture2D" uid="uid://fa6irbs205q0" path="res://Asset/Props2D/Plants/PlantsSprite/Grass.Tall01.png" id="6_jc3f2"]
+[ext_resource type="Texture2D" uid="uid://nucbe7iasf0f" path="res://Asset/Props2D/Plants/PlantsSprite/Grass.Tall02.png" id="7_n8ufn"]
+[ext_resource type="Texture2D" uid="uid://jl0eqcsxc21p" path="res://Asset/Props2D/Plants/PlantsSprite/Tree.Medium.png" id="8_l04i5"]
+[ext_resource type="Texture2D" uid="uid://c105yl5av1sth" path="res://Asset/Props2D/Plants/PlantsSprite/Tree.other.png" id="9_3olvo"]
+[ext_resource type="Texture2D" uid="uid://h0cerbj5p7js" path="res://Asset/Props2D/Plants/PlantsSprite/Tree.Small.png" id="10_evq7f"]
+[ext_resource type="Texture2D" uid="uid://iuj7ef01kneg" path="res://Asset/Props2D/Plants/PlantsSprite/Tree.Tall.png" id="11_nyd0n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6hkt8"]
+load_path = "res://.godot/imported/Bush.Small.png-accaac35f66b38af062de6e346dadade.s3tc.ctex"
 
 [sub_resource type="Animation" id="Animation_67og8"]
 length = 0.001
@@ -87,6 +99,7 @@ size = Vector3(0.506937, 0.515625, 0.710693)
 [node name="PlantTree" type="Node3D"]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, 0, 0)
 script = ExtResource("1_xutyr")
+textures = [ExtResource("2_6j7y6"), ExtResource("2_ikwig"), ExtResource("4_nb4tq"), ExtResource("5_ifhfi"), ExtResource("6_jc3f2"), ExtResource("7_n8ufn"), ExtResource("8_l04i5"), ExtResource("9_3olvo"), ExtResource("10_evq7f"), ExtResource("11_nyd0n")]
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -95,7 +108,7 @@ transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.001032
 centered = false
 offset = Vector2(-60, 0)
 shaded = true
-texture = ExtResource("2_ikwig")
+texture = SubResource("CompressedTexture2D_6hkt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Node3D/Sprite3D")

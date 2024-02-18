@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ufd774c7xwy"]
+[gd_scene load_steps=6 format=3 uid="uid://3ufd774c7xwy"]
 
 [ext_resource type="Script" path="res://Environment/random_rocks.gd" id="1_bf683"]
 [ext_resource type="Texture2D" uid="uid://cqs4erxyauuck" path="res://Environment/Sprites/Rock_AA.png" id="1_vgpaq"]
+[ext_resource type="Texture2D" uid="uid://87ueu5wiaqbo" path="res://Environment/Sprites/Rock_AB.png" id="4_rsia7"]
+[ext_resource type="Texture2D" uid="uid://01dg77bqnbil" path="res://Environment/Sprites/Skull.png" id="5_eutmk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bmfat"]
+load_path = "res://.godot/imported/Rock_AA.png-801c3fd7484c9b10ce02f970233add6f.s3tc.ctex"
 
 [node name="RandomRocks" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -9,5 +14,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.282286, 0)
 shaded = true
-texture = ExtResource("1_vgpaq")
+texture = SubResource("CompressedTexture2D_bmfat")
 script = ExtResource("1_bf683")
+textures = [ExtResource("1_vgpaq"), ExtResource("4_rsia7"), ExtResource("5_eutmk")]
