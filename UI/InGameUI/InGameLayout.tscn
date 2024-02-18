@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://5ottu7xftfdp"]
+
+[ext_resource type="Texture2D" uid="uid://hng1713dir1k" path="res://UI/InGameUI/BackUIProgressBar.png" id="1_382wq"]
+[ext_resource type="Texture2D" uid="uid://5d8vigie3mf0" path="res://UI/InGameUI/Portal stability.png" id="2_ivybu"]
+[ext_resource type="Texture2D" uid="uid://cjhajuvxgi5da" path="res://UI/InGameUI/BackUIScore.png" id="3_vpunp"]
+[ext_resource type="FontFile" uid="uid://dxexw55tub0df" path="res://UI/InGameUI/RETROTECH.ttf" id="4_anwtm"]
+[ext_resource type="Texture2D" uid="uid://dshp7ee3d1lf2" path="res://UI/InGameUI/Remastered Enemies.png" id="5_8itoa"]
+[ext_resource type="Texture2D" uid="uid://jsmyhpvt0700" path="res://UI/InGameUI/ProgressBar_Back.png" id="6_wf8e4"]
+[ext_resource type="Texture2D" uid="uid://cm7j3d2ijj0o0" path="res://UI/InGameUI/ProgressBar_Over.png" id="7_mdqeu"]
+[ext_resource type="Texture2D" uid="uid://ci8dhg5se5een" path="res://UI/InGameUI/ProgressBar_Progress.png" id="8_hmyl2"]
+
+[node name="InGameLayout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackUiProgressBar" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1013, 566)
+scale = Vector2(0.470894, 0.508969)
+texture = ExtResource("1_382wq")
+
+[node name="PortalStability" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1014, 543)
+scale = Vector2(0.576923, 0.576923)
+texture = ExtResource("2_ivybu")
+
+[node name="BackUiScore" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(279, 38)
+scale = Vector2(0.550936, 0.521277)
+texture = ExtResource("3_vpunp")
+
+[node name="Label" type="Label" parent="CanvasLayer/BackUiScore"]
+offset_left = 299.491
+offset_top = -21.1021
+offset_right = 441.491
+offset_bottom = 24.8979
+theme_override_fonts/font = ExtResource("4_anwtm")
+theme_override_font_sizes/font_size = 49
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RemasteredEnemies" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(206, 37)
+scale = Vector2(0.680233, 0.680232)
+texture = ExtResource("5_8itoa")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 910.0
+offset_top = 560.0
+offset_right = 1115.0
+offset_bottom = 590.0
+nine_patch_stretch = true
+texture_under = ExtResource("6_wf8e4")
+texture_over = ExtResource("7_mdqeu")
+texture_progress = ExtResource("8_hmyl2")
