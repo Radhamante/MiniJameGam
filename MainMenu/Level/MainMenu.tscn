@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://ehnf2hekod5w"]
+
+[ext_resource type="Texture2D" uid="uid://bwivqr8cunrkh" path="res://MainMenu/Sprites/Menu_BackGround.png" id="1_smqow"]
+[ext_resource type="Texture2D" uid="uid://bmm8a8cr4k1fw" path="res://MainMenu/Sprites/Titre.png" id="2_5ryaj"]
+[ext_resource type="Script" path="res://MainMenu/Scripts/MainMenu_Buttons.gd" id="3_qxuuy"]
+[ext_resource type="AudioStream" uid="uid://c6uaib7eb0g51" path="res://MainMenu/Medias/Sound/MainMenu_theme.wav" id="4_cuui8"]
+[ext_resource type="Script" path="res://MainMenu/Scripts/AnimationPlayer_MainMenu.gd" id="5_uop2q"]
+
+[sub_resource type="Animation" id="Animation_jui7e"]
+resource_name = "Title_MainMeanu"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.9, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 0.95), Vector2(1, 1), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0349066, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q02ta"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1af5"]
+_data = {
+"RESET": SubResource("Animation_q02ta"),
+"Title_MainMeanu": SubResource("Animation_jui7e")
+}
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(961, 540)
+texture = ExtResource("1_smqow")
+
+[node name="Titre" type="Sprite2D" parent="."]
+position = Vector2(590, 65)
+texture = ExtResource("2_5ryaj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+script = ExtResource("3_qxuuy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.69
+offset_top = 6.04999
+offset_right = 6.31
+offset_bottom = 72.05
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.065, 2.065)
+
+[node name="Start_Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Start"
+flat = true
+
+[node name="Quit_Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.611765, 0, 0, 1)
+text = "Quit"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cuui8")
+volume_db = -15.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Titre")
+callback_mode_method = 1
+libraries = {
+"": SubResource("AnimationLibrary_d1af5")
+}
+script = ExtResource("5_uop2q")
+
+[connection signal="pressed" from="Control/VBoxContainer/Start_Button" to="Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit_Button" to="Control" method="_on_quit_button_pressed"]
