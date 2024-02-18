@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuwbc7ykhu062"]
+[gd_scene load_steps=15 format=3 uid="uid://cuwbc7ykhu062"]
 
 [ext_resource type="Script" path="res://Enemies/Raptor/script/raptor.gd" id="1_rtl85"]
 [ext_resource type="SpriteFrames" uid="uid://boicabvtw6y6f" path="res://Asset/Ennemies/IddleEnnemy.tres" id="2_5u11q"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://cygvudaiu4m8y" path="res://Enemies/Raptor/sound/fear/fear_4.wav" id="7_v6eob"]
 [ext_resource type="AudioStream" uid="uid://c3gasl7ng0nr1" path="res://Enemies/Raptor/sound/dead/dead_1.wav" id="8_1dr2v"]
 [ext_resource type="AudioStream" uid="uid://yiyc7kwsx8qh" path="res://Enemies/Raptor/sound/dead/dead_2.wav" id="9_1wdfu"]
+[ext_resource type="AudioStream" uid="uid://lbpvkk88p155" path="res://Enemies/Raptor/sound/Toothless_Dancing.wav" id="10_juv33"]
+[ext_resource type="Script" path="res://Enemies/Raptor/script/AudioStreamPlayer3D.gd" id="11_t5kgg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ipx6h"]
 height = 1.54341
@@ -41,6 +43,13 @@ autoplay = "Iddle"
 visible = false
 mesh = SubResource("CapsuleMesh_tqfy1")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58729, 0)
+stream = ExtResource("10_juv33")
+volume_db = -3.0
+max_distance = 7.0
+script = ExtResource("11_t5kgg")
+
 [node name="dino" parent="." instance=ExtResource("3_mqv28")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 visible = false
@@ -72,3 +81,5 @@ stream = ExtResource("8_1dr2v")
 
 [node name="dead_2" type="AudioStreamPlayer3D" parent="Sounds/Dead"]
 stream = ExtResource("9_1wdfu")
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="AudioStreamPlayer3D" method="_on_finished"]
