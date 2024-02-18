@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba3nhqwww4ecf"]
+[gd_scene load_steps=4 format=3 uid="uid://ba3nhqwww4ecf"]
 
 [ext_resource type="FontFile" uid="uid://dxexw55tub0df" path="res://UI/InGameUI/RETROTECH.ttf" id="1_ayut8"]
+[ext_resource type="Script" path="res://UI/Credits/CreditScene.gd" id="1_oamv6"]
 [ext_resource type="Texture2D" uid="uid://bxer7i2cbmns5" path="res://UI/Credits/Capture d'écran 2024-02-18 122312.png" id="1_rj5k0"]
 
 [node name="CreditScene" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oamv6")
 
 [node name="CaptureD\'écran2024-02-18122312" type="Sprite2D" parent="."]
 position = Vector2(575, 325)
@@ -22,58 +24,6 @@ offset_top = 2.0
 offset_right = 1150.0
 offset_bottom = 651.0
 color = Color(0, 0, 0, 0.278431)
-
-[node name="Credits" type="Label" parent="."]
-layout_mode = 0
-offset_left = 438.0
-offset_top = 140.0
-offset_right = 710.0
-offset_bottom = 194.0
-theme_override_fonts/font = ExtResource("1_ayut8")
-theme_override_font_sizes/font_size = 40
-text = "Credits"
-horizontal_alignment = 1
-
-[node name="TextUs" type="Label" parent="Credits"]
-layout_mode = 0
-offset_left = -90.0
-offset_top = 50.0
-offset_right = 388.0
-offset_bottom = 213.0
-theme_override_fonts/font = ExtResource("1_ayut8")
-theme_override_font_sizes/font_size = 20
-text = "
-Radhamante - Dev, Sound design
-
-Samsaga - Art, Animatic
-
-Jouli - Game Design, Art
-
-"
-horizontal_alignment = 1
-
-[node name="ThirdPArty" type="Label" parent="Credits/TextUs"]
-layout_mode = 0
-offset_left = 103.0
-offset_top = 198.0
-offset_right = 375.0
-offset_bottom = 292.0
-theme_override_fonts/font = ExtResource("1_ayut8")
-theme_override_font_sizes/font_size = 30
-text = "Third Party Assets"
-horizontal_alignment = 1
-
-[node name="TextThird" type="Label" parent="Credits/TextUs/ThirdPArty"]
-offset_left = -79.0
-offset_top = 55.0
-offset_right = 371.0
-offset_bottom = 218.0
-theme_override_fonts/font = ExtResource("1_ayut8")
-theme_override_font_sizes/font_size = 20
-text = "Music : Skitchin' OST - Cheese Grater
-
-3D Animation and RIG : Mixamo"
-horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -96,3 +46,54 @@ theme_override_colors/icon_hover_pressed_color = Color(0.32549, 0.32549, 0.32549
 theme_override_fonts/font = ExtResource("1_ayut8")
 text = "Return"
 flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 97.0
+offset_right = 741.0
+offset_bottom = 423.0
+
+[node name="Credits" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ayut8")
+theme_override_font_sizes/font_size = 40
+text = "
+Credits"
+horizontal_alignment = 1
+
+[node name="TextUs" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ayut8")
+theme_override_font_sizes/font_size = 20
+text = "
+Radhamante - Dev, Sound design
+
+Samsaga - Art, Animatic
+
+Jouli - Game Design, Art
+
+"
+horizontal_alignment = 1
+
+[node name="ThirdPArty" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ayut8")
+theme_override_font_sizes/font_size = 30
+text = "Third Party Assets"
+horizontal_alignment = 1
+
+[node name="TextThird" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ayut8")
+theme_override_font_sizes/font_size = 20
+text = "
+Musics : 
+Skitchin' OST - Cheese Grater
+Skitchin' OST - Loser
+Grayskies
+
+3D Animation and RIG : Mixamo"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
