@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccmtmquccghuv"]
+[gd_scene load_steps=19 format=3 uid="uid://ccmtmquccghuv"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_2pojc"]
 [ext_resource type="PackedScene" uid="uid://cyb2nohvo1o5v" path="res://Character/Scene/B0by.tscn" id="1_226jx"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djp1ctqa6fvkj" path="res://Environment/Grounds/Ground_AA/Ground_AA.tscn" id="8_5e3me"]
 [ext_resource type="PackedScene" uid="uid://c6y284gpewsxx" path="res://Patterns/Pattern1.tscn" id="9_c8cor"]
 [ext_resource type="PackedScene" uid="uid://cm0vcew7abjil" path="res://Patterns/Pattern2.tscn" id="10_o2rif"]
+[ext_resource type="AudioStream" uid="uid://fxo8oyafp4e8" path="res://Scenes/Levels/Sounds/music.wav" id="13_jhqq7"]
 
 [sub_resource type="Shader" id="Shader_ellpk"]
 code = "shader_type sky;
@@ -270,7 +271,7 @@ background_mode = 1
 background_color = Color(0.14902, 0.14902, 0.14902, 1)
 sky = SubResource("Sky_x6jy0")
 ambient_light_source = 2
-ambient_light_color = Color(0.32549, 0.32549, 0.32549, 1)
+ambient_light_color = Color(0.0862745, 0.25098, 0.368627, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xfbdq"]
 shader = ExtResource("6_2lnak")
@@ -309,7 +310,7 @@ shaded = true
 texture = ExtResource("4_abjho")
 
 [node name="Sprite3D2" type="Sprite3D" parent="SubViewportContainer/SubViewport/Camera3D2"]
-transform = Transform3D(20, 0, 2.86102e-06, 0, 20, 0, -2.86102e-06, 0, 20, 0.441502, 1.05976, -45.5832)
+transform = Transform3D(13.175, 0, 1.8847e-06, 0, 13.175, 0, -1.8847e-06, 0, 13.175, 0.441502, 1.05976, -45.5832)
 shaded = true
 texture = ExtResource("5_vg1le")
 
@@ -329,6 +330,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, -5)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 4.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jhqq7")
+volume_db = -3.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

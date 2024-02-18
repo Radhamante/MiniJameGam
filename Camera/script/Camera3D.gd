@@ -27,6 +27,7 @@ func shoot_ray():
 		var look_direction = Vector3(raycast_result["position"])
 		look_direction.x = 0
 		var head_rotate = target.get_node("Armature/Skeleton3D/BoneAttachment3D2/Node3D/head_rotation_axis")
+
 		head_rotate.look_at(look_direction)
 		head_rotate.rotation_degrees.x = clamp(head_rotate.rotation_degrees.x, -29, 50)
 
