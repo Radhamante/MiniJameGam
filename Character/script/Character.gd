@@ -10,6 +10,8 @@ const FRICTION = 0.15
 const JUMP_VELOCITY = 13
 var timer: Timer
 
+@onready var jump_sounds = get_node("Sounds/Jump")
+@onready var hit_sounds = get_node("Sounds/Hit")
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -17,7 +19,7 @@ var timer: Timer
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _ready():	
+func _ready():
 	timer = Timer.new()
 	timer.set_wait_time(10) # 5 seconds wait time
 	timer.set_one_shot(true)
@@ -28,12 +30,12 @@ func _ready():
 func dance():
 	animation_tree.set("parameters/conditions/dancing", true)
 
+
 func _input(event):
 	animation_tree.set("parameters/conditions/dancing", false)
-	if event.is_action("left_click") && is_on_floor():
+	if state_machine.get_current_node() != "Hit" and event.is_action("left_click") and is_on_floor():
 		animation_tree.set("parameters/conditions/attack", true)
 	else:
-		
 		animation_tree.set("parameters/conditions/attack", false)
 
 func _physics_process(delta):
@@ -57,6 +59,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			animation_tree.set("parameters/conditions/jumping", true)
 			velocity.y = JUMP_VELOCITY
+			play_random_jump()
 		else:
 			animation_tree.set("parameters/conditions/jumping", false)
 		
@@ -76,3 +79,8 @@ func _physics_process(delta):
 				velocity.z = 0
 	position.x = 0
 	move_and_slide()
+
+func play_random_jump():
+	var sound: AudioStreamPlayer3D = jump_sounds.get_child(randi() % jump_sounds.get_child_count())
+	sound.play()
+

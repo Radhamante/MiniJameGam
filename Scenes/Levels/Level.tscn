@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccmtmquccghuv"]
+[gd_scene load_steps=18 format=3 uid="uid://ccmtmquccghuv"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level.gd" id="1_2pojc"]
 [ext_resource type="PackedScene" uid="uid://cyb2nohvo1o5v" path="res://Character/Scene/B0by.tscn" id="1_226jx"]
 [ext_resource type="Script" path="res://Character/script/Character.gd" id="2_cbh1u"]
+[ext_resource type="Texture2D" uid="uid://cq4nqehw4fj7b" path="res://Scenes/Levels/background/Sky.png" id="4_abjho"]
 [ext_resource type="PackedScene" uid="uid://b4ov2mepykkvh" path="res://Camera/camera_3d.tscn" id="4_sfc8j"]
+[ext_resource type="Texture2D" uid="uid://bxy2qu46dmv1x" path="res://Scenes/Levels/background/BackGround.png" id="5_vg1le"]
 [ext_resource type="Shader" path="res://Scenes/Levels/Shaders/retro.gdshader" id="6_2lnak"]
 [ext_resource type="PackedScene" uid="uid://besyet8ela4l6" path="res://Scenes/Levels/PatternSpawner.tscn" id="6_natas"]
 [ext_resource type="PackedScene" uid="uid://bcm8jbfpvene1" path="res://Patterns/Pattern3.tscn" id="7_1m6kb"]
 [ext_resource type="PackedScene" uid="uid://djp1ctqa6fvkj" path="res://Environment/Grounds/Ground_AA/Ground_AA.tscn" id="8_5e3me"]
-[ext_resource type="Texture2D" uid="uid://bt611jevkiik3" path="res://Scenes/Levels/background/background.jpg" id="8_81b7e"]
 [ext_resource type="PackedScene" uid="uid://c6y284gpewsxx" path="res://Patterns/Pattern1.tscn" id="9_c8cor"]
 [ext_resource type="PackedScene" uid="uid://cm0vcew7abjil" path="res://Patterns/Pattern2.tscn" id="10_o2rif"]
 
@@ -303,9 +304,14 @@ current = true
 target = NodePath("../../../B0by")
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Camera3D2"]
-transform = Transform3D(10, 0, -2.14577e-06, 0, 10, 0, -4.76837e-07, 0, 10, -0.728724, 1.05976, -36.501)
+transform = Transform3D(70, 0, 2.96699e-06, 0, 70, 0, -2.96699e-06, 0, 70, -0.156167, 1.05976, -46.8649)
 shaded = true
-texture = ExtResource("8_81b7e")
+texture = ExtResource("4_abjho")
+
+[node name="Sprite3D2" type="Sprite3D" parent="SubViewportContainer/SubViewport/Camera3D2"]
+transform = Transform3D(20, 0, 2.86102e-06, 0, 20, 0, -2.86102e-06, 0, 20, 0.441502, 1.05976, -45.5832)
+shaded = true
+texture = ExtResource("5_vg1le")
 
 [node name="B0by" parent="." instance=ExtResource("1_226jx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19415, 1.43899)
