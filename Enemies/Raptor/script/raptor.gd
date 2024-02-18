@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var player: Node3D = get_node("/root/Level/B0by")
 @onready var anim = $AnimatedSprite3D
+@onready var music = $AudioStreamPlayer3D
 
 @onready var fear_sounds = $Sounds/Fear
 @onready var dead_sounds = $Sounds/Dead
@@ -49,6 +50,7 @@ func hit():
 	Global.score += 1
 	play_random_death()
 	is_dead = true
+	music.play()
 	get_node("AnimatedSprite3D").visible = false
 	get_node("Collision_ground").disabled = true
 	get_node("dino").visible = true
