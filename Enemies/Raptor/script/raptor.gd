@@ -55,10 +55,8 @@ func hit():
 	
 func play_random_fear():
 	var sound: AudioStreamPlayer3D = fear_sounds.get_child(randi() % fear_sounds.get_child_count())
-	print(sound)
 	sound.play()
 	
 func play_random_death():
 	var sound: AudioStreamPlayer3D = dead_sounds.get_child(randi() % dead_sounds.get_child_count())
-	print(sound)
 	sound.play()

@@ -91,9 +91,10 @@ script = ExtResource("1_xutyr")
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00103283, -0.00908732, -0.00184488)
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.00103283, -0.0379929, -0.00184488)
 centered = false
 offset = Vector2(-60, 0)
+shaded = true
 texture = ExtResource("2_ikwig")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
