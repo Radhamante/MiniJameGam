@@ -57,6 +57,7 @@ offset_left = 910.0
 offset_top = 560.0
 offset_right = 1115.0
 offset_bottom = 590.0
+max_value = 8.0
 nine_patch_stretch = true
 texture_under = ExtResource("6_wf8e4")
 texture_over = ExtResource("7_mdqeu")
