@@ -10,8 +10,8 @@ const FRICTION = 0.15
 const JUMP_VELOCITY = 13
 var timer: Timer
 
-@onready var jump_sounds = get_node("Sounds/Jump")
-@onready var hit_sounds = get_node("Sounds/Hit")
+@onready var random_insults:AudioStreamPlayer3D = get_node("Sounds/random_insults")
+@onready var random_jumps:AudioStreamPlayer3D = get_node("Sounds/random_jumps")
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -26,6 +26,7 @@ func _ready():
 	add_child(timer)
 	timer.timeout.connect(dance)
 	timer.start()
+	
 
 func dance():
 	animation_tree.set("parameters/conditions/dancing", true)
@@ -39,7 +40,8 @@ func _input(event):
 		animation_tree.set("parameters/conditions/attack", false)
 
 func _physics_process(delta):
-	
+	if not random_insults.playing and randf() > 0.995:
+		random_insults.play()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta 
@@ -59,7 +61,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			animation_tree.set("parameters/conditions/jumping", true)
 			velocity.y = JUMP_VELOCITY
-			play_random_jump()
+			random_jumps.play()
 		else:
 			animation_tree.set("parameters/conditions/jumping", false)
 		
@@ -79,8 +81,4 @@ func _physics_process(delta):
 				velocity.z = 0
 	position.x = 0
 	move_and_slide()
-
-func play_random_jump():
-	var sound: AudioStreamPlayer3D = jump_sounds.get_child(randi() % jump_sounds.get_child_count())
-	sound.play()
 

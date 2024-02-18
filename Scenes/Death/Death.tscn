@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4n8wq4k0ajjk"]
+
+[ext_resource type="Script" path="res://Scenes/Death/Death.gd" id="1_0xaga"]
+[ext_resource type="Texture2D" uid="uid://bblek6k8etggs" path="res://UI/GameOver/GameOverScreen.png" id="1_6gtpj"]
+[ext_resource type="Texture2D" uid="uid://bnhe5didqhgb4" path="res://UI/GameOver/RetryButton.png" id="2_kmohc"]
+[ext_resource type="AudioStream" uid="uid://c0n2i348a1dka" path="res://Scenes/Death/no.wav" id="4_i3g0e"]
+[ext_resource type="AudioStream" uid="uid://0nbo4ikf7xr1" path="res://Scenes/Death/looser_music.wav" id="5_1e8s3"]
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xaga")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1156, 648)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 652.0
+texture = ExtResource("1_6gtpj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 401.0
+offset_right = 550.0
+offset_bottom = 442.0
+scale = Vector2(3, 3)
+theme_type_variation = &"FlatButton"
+icon = ExtResource("2_kmohc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i3g0e")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1e8s3")
+volume_db = -2.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
